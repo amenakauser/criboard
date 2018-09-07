@@ -48,7 +48,7 @@ class Address extends React.Component {
     return(
       <div>
       <Nav />
-      <div className="jumbotron">
+      <div className="jumbotron col-md-4 col-md-offset-4" style={{ marginTop:"15vh" }}>
         <h3>Enter address</h3>
           <div className="form-group">
             <label>Enter street address</label>&nbsp;&nbsp;

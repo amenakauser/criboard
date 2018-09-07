@@ -13,9 +13,8 @@ class Help extends React.Component {
     return(
       <div>
         <Nav/>
-        <div className="jumbotron">
+        <div className="jumbotron col-md-4 col-md-offset-4" style={{ marginTop:"20vh" }}>
           <h3>Help</h3>
-          <a href="https://rpt06-squealing-alligators.github.io/criboard/">Please see our github page for additional information</a>
         </div>
       </div>
     )

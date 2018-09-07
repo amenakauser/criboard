@@ -80,8 +80,8 @@ class Signup extends React.Component {
       );
     }
     return (
-      <div className="jumbotron">
-        <h1 className="display-4">Signup</h1>
+      <div className="col-md-4 col-md-offset-4 jumbotron" style={{ marginTop:"15vh" }}>
+        <h1 className="display-2">Signup</h1>
           <div className="form-group">
             <label>Username</label>&nbsp;&nbsp;
             <input type="email" className="form-control" placeholder="Enter username" name="username" value={this.state.usernamel} onChange={this.onChange.bind(this)} />

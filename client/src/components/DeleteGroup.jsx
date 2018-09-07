@@ -50,7 +50,7 @@ class DeleteGroup extends React.Component {
     return (
       <div>
         <Nav />
-        <div className="jumbotron">
+        <div className="jumbotron col-md-4 col-md-offset-4" style={{ marginTop:"15vh" }}>
         <h3>Delete Group</h3>
           <div className="form-group">
           <label>Pick a Group to delete</label>&nbsp;&nbsp;

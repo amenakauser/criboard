@@ -44,6 +44,7 @@ class Dashboard extends React.Component {
       <Nav />
       <div className="jumbotron">
         <h3>Dashboard for {this.state.user}</h3>
+        <div className="col-md-4 col-md-offset-4" style={{ marginTop:"15vh" }}>
         <div id="mapid"></div>
         <ul className="dashboard-bullets">
           <li>Address: {this.state.address}</li>
@@ -51,6 +52,7 @@ class Dashboard extends React.Component {
           <li>User specific info</li>*/}
         </ul>
        {/*} <textarea className="whiteboard" name="message" rows="10" cols="30" defaultValue={this.state.whiteboard}></textarea> */}
+       </div>
       </div>
       </div>
     )

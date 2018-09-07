@@ -74,7 +74,7 @@ class Group extends React.Component {
     return (
       <div>
         <Nav />
-          <div className="jumbotron">
+          <div className="jumbotron col-md-4 col-md-offset-4" style={{ marginTop:"15vh" }}>
             <form id="regForm" method="POST" onSubmit={() => alert('Your group has been created')}>
             <h3>Create a Group</h3>
             <div className="tab" ref="numberTab">
