@@ -90,41 +90,38 @@ var fetchUsers = (callback) => {
   })
 };
 
-// function to get all data from transactions table
-var fetchActivity = (callback) => {
-  var transactions = [];
-  Transaction.findAll({})
-  .then(results => {
-    results.forEach(result => {
-      User.findOne({
-        where: {id: result.UserId}
-      })
-      .then(user => {
-        var username = user.username;
-        Group.findOne({
-          where: {id: result.GroupId}
-        })
-        .then(group => {
-          var groupname = group.groupname;
-          var transaction = {
-            paidBy: username,
-            amount: result.amount,
-            date: result.date,
-            bill: result.bill,
-            username: username,
-            groupname: groupname
-          };
-          transactions.push(transaction);
-          if (transactions.length === results.length) {
-            callback(transactions);
-          }
-        })
-      })
+// find all transactions in groups to which the user belongs
+var fetchActivity = async(username) => {
+  var results = [];
+  // find userid for given user
+  var user = await User.findOne({ where: {username: username} });
+  var userid = user.id;
+  // find groupids for this user
+  var userGroups = await UserGroup.findAll({ where: {UserId: userid} })
+  var groupIds = userGroups.map(usergroup => usergroup.dataValues.GroupId);
+  // for each group, find groupname and transactions and add to transactions array
+  for(var i = 0; i < groupIds.length; i++) {
+    var groupId = groupIds[i];
+    // find groupname
+    var groupname = (await Group.findOne({ where: {id: groupId} })).groupname;
+    // find transactions for this group
+    var groupTransactions = await Transaction.findAll({ where: {GroupId: groupId} });
+    var transactions = groupTransactions.map(async(result) => {
+      // find user that paid for transaction
+      var user = await User.findOne({ where: {id: result.UserId }});
+      var username = user.username;
+      var transaction = await {
+        paidBy: username,
+        amount: result.amount,
+        date: result.date,
+        bill: result.bill,
+        groupname: groupname
+      };
+      return transaction;
     })
-  })
-  .catch(err => {
-    callback(null)
-  });
+    results = results.concat(await Promise.all(transactions));
+  }
+  return results;
 };
 
 var getAddress = (user, cb) => {

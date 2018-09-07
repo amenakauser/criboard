@@ -208,11 +208,10 @@ app.get('/fetchusers', authMiddleware(), function(req, res) {
   })
 });
 
-app.get('/allactivity', authMiddleware(), function(req, res) {
+app.get('/allactivity', authMiddleware(), async(req, res) => {
   var username = req.user;
-  db.fetchActivity(function(results) {
-    res.send(results);
-  });
+  var results = await db.fetchActivity(username);
+  res.send(results);
 });
 
 // route to get username of the currently logged in user
