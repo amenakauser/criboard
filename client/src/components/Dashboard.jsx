@@ -19,7 +19,6 @@ class Dashboard extends React.Component {
   componentDidMount() {
     axios.get('/getaddress')
     .then(result => {
-      console.log('result.data', result.data)
       this.setState({
       user: result.data.username,
       address: result.data.address,
@@ -42,7 +41,7 @@ class Dashboard extends React.Component {
     return(
       <div>
       <Nav />
-      <div className="jumbotron">
+      <div className="jumbotron" style={{ margin: "0 20vh" }}>
         <h3>Dashboard for {this.state.user}</h3>
         <div className="col-md-4 col-md-offset-4" style={{ marginTop:"15vh" }}>
         <div id="mapid"></div>

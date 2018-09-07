@@ -68,7 +68,7 @@ class UserFinances extends React.Component {
             var group = groupInfo[i].groupname;
             return (
               <tr key={j}>
-                <td>{user} owes ${row[j]} to {item}<button className="settle btn btn-primary" onClick={() => this.onClick(group, user1, j)}>Settle Up</button></td>
+                <td>{user} owes ${row[j].toFixed(2)} to {item}<button className="settle btn btn-primary" onClick={() => this.onClick(group, user1, j)}>Settle Up</button></td>
               </tr>
             );
           }
@@ -79,7 +79,7 @@ class UserFinances extends React.Component {
             var group = groupInfo[i].groupname;
             return (
               <tr key={j}>
-                <td> {user} is owed ${Math.abs(row[j])} by {item}<button className="settle btn btn-primary" onClick={() => this.onClick(group, user1, j)}>Settle Up</button></td>
+                <td> {user} is owed ${Math.abs(row[j]).toFixed(2)} by {item}<button className="settle btn btn-primary" onClick={() => this.onClick(group, user1, j)}>Settle Up</button></td>
               </tr>
             );
           }
@@ -110,7 +110,7 @@ class UserFinances extends React.Component {
   return (
     <div>
       <Nav />
-      <div className="jumbotron">
+      <div className="jumbotron" style={{ margin: "0 20vh" }}>
       <h3>{this.state.user}'s finances</h3>
       {toRender}
       </div>

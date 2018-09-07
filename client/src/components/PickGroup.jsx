@@ -48,7 +48,7 @@ class PickGroup extends React.Component {
     return (
       <div>
         <Nav />
-        <div className="jumbotron">
+        <div className="jumbotron" style={{ margin: "0 20vh" }}>
         <h3>Add a Transaction</h3>
           <div className="form-group">
           <label>Pick a Group</label>&nbsp;&nbsp;

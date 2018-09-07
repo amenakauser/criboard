@@ -37,7 +37,7 @@ class Activity extends React.Component {
     return(
       <div>
       <Nav />
-      <div className="jumbotron">
+      <div className="jumbotron" style={{ margin: "0 20vh" }}>
       <h3>Financial Activity</h3>
         <table className="table table-hover">
           <thead>

@@ -71,7 +71,7 @@ class AddTransaction extends React.Component {
     });
     return (
       <div>
-        <div className="jumbotron col-md-4 col-md-offset-4" style={{ marginTop:"15vh" }}>
+        <div className="jumbotron col-md-4 col-md-offset-4" style={{ marginTop:"10vh" }}>
           <h3>Enter a transaction for {this.props.group} group</h3>
           <div className="form-group">
             <label>Bill</label>&nbsp;&nbsp;
