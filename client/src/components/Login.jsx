@@ -10,7 +10,7 @@ class Login extends React.Component {
     this.state = {
       username: '',
       password: '',
-      onDashboard: false,
+      onUserFinances: false,
       onLandingPage: false
     }
   }
@@ -36,7 +36,7 @@ class Login extends React.Component {
         alert(`${this.state.username} is logged in!`)
         if (result) {
           this.setState({
-            onDashboard: true
+            onUserFinances: true
           })
         } else {
           this.setState({
@@ -53,9 +53,9 @@ class Login extends React.Component {
   }
 
   render() {
-    if (this.state.onDashboard) {
+    if (this.state.onUserFinances) {
       return (
-        <Redirect to="/dashboard" />
+        <Redirect to="/userfinances" />
       );
     } else if (this.state.onLandingPage) {
       return (
