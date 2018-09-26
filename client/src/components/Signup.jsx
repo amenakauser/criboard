@@ -12,7 +12,7 @@ class Signup extends React.Component {
       email: '',
       password: '',
       passwordMatch: '',
-      onDashboard: false,
+      onUserFinances: false,
       onLandingPage: false
     }
   }
@@ -39,9 +39,9 @@ class Signup extends React.Component {
             console.log(result);
             if (result.data === 'user created') {
               alert(`Info for ${this.state.username} has been saved`);
-              // redirect to Dashboard after signup
+              // redirect to User Finances page after signup
               this.setState({
-                onDashboard: true
+                onUserFinances: true
               })
             } else if (result.data === 'user already exists') {
               alert(`${this.state.username} already exists. Please login as ${this.state.username} or signup as a different user`)
@@ -70,9 +70,9 @@ class Signup extends React.Component {
   }
 
   render() {
-    if (this.state.onDashboard) {
+    if (this.state.onUserFinances) {
       return (
-        <Redirect to="/dashboard" />
+        <Redirect to="/userfinances" />
       );
     } else if (this.state.onLandingPage) {
       return (
