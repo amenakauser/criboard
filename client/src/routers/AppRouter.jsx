@@ -11,7 +11,6 @@ import Issbook from '../components/Issbook.jsx';
 import Issupplies from '../components/Issupplies.jsx';
 import Address from '../components/Address.jsx';
 import Group from '../components/Group.jsx';
-import Help from '../components/Help.jsx';
 import PickGroup from '../components/PickGroup.jsx';
 import DeleteGroup from '../components/DeleteGroup.jsx';
 import AddTransaction from '../components/AddTransaction.jsx';
@@ -34,7 +33,6 @@ const AppRouter = () => (
       <Route exact path="/supplies" component={Issupplies}/>
       <Route exact path="/address" component={Address}/>
       <Route exact path="/group" component={Group}/>
-      <Route exact path="/help" component={Help}/>
       <Route exact path="/dashboard" component={Dashboard}/>
       <Route exact path="/pickgroup" component={PickGroup}/>
       <Route exact path="/deletegroup" component={DeleteGroup}/>
