@@ -9,10 +9,10 @@ var Group = db.define('Group', {
     unique: true
   },
   matrix: {
-    type: Sequelize.TEXT // serialize the matrix to store it
+    type: Sequelize.TEXT('long') // serialize the matrix to store it
   },
   members: {
-    type: Sequelize.TEXT // save the array of users in the groups table as an MVP - later use the join table to get this information
+    type: Sequelize.TEXT // save the array of users in the groups table
   }
 });
 
