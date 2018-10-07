@@ -10,7 +10,7 @@ import $ from 'jquery';
 import Issnew from './Issnew.jsx';
 import Issbook from './Issbook.jsx';
 import Issupplies from './Issupplies.jsx';
-import data from '../assets/mockdata.json';
+// import data from '../assets/mockdata.json';
 import '../assets/styles/index.css';
 var images = require.context('../assets/downloads', false, /\.(png|jpg|gif)$/);
 

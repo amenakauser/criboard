@@ -20,14 +20,7 @@ An app to track/split monthly expenses, maintenance issues, etc. and help roomma
 
 ## Usage
 
-> Create a local MySQL database. Create a config.js file in the root directory and add the following code in the file.
-
-module.exports = {
-  DBNAME: 'your-database-name',
-  DBUSERNAME: 'your-username',
-  DBPASSWORD: 'your-password',
-  DBHOST: 'your-host-url or localhost'
-};
+> Create a local MySQL database named 'criboard' for the 'root' user with no password.
 
 ## Requirements
 
